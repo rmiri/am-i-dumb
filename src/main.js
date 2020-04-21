@@ -1,11 +1,36 @@
 'use strict';
+const answerDiv = document.getElementById('answer-div');
 
-function counter() {
-  let seconds = 0;
-  setInterval(() => {
-    seconds += 1;
-    document.getElementById('app').innerHTML = `<p>You have been here for ${seconds} seconds.</p>`;
+function answer(answer) {
+  
+  setTimeout(() => {
+    answerDiv.innerHTML = `<p>${answer}</p>`;
   }, 1000);
+  
 }
 
-counter();
+function buttonClick() {
+  const loaderDiv = document.getElementById('loader-div');
+  const div = document.createElement('div');
+
+  div.setAttribute("id", "loader");
+  loaderDiv.append(div);
+
+  const answers = ['yes','no','sometimes', 'you were that time'];
+
+  let item = answers[Math.floor(Math.random() * answers.length)];
+  
+  console.log(item)
+  setTimeout(() => {
+   div.remove();
+  }, 999);
+
+  answer(item);
+  
+}
+
+document.getElementById('dumb-button').addEventListener("click", buttonClick)
+
+function dotHover(element) {
+  element.setAttribute("class", "dotHover");
+}
