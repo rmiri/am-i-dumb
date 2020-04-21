@@ -5,6 +5,7 @@
 html {
   line-height: 1.2; 
   -webkit-text-size-adjust: 100%; 
+  height: 100%;
 }
 
 html, * {
@@ -13,17 +14,109 @@ html, * {
 
 body {
   margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  /* background: url('images/background.png') no-repeat center center fixed; */
+  background: linear-gradient(to bottom, #ffe134, #af68a6);
 }
 
+h1 {
+  font-family: 'Cookie', cursive;
+  color: white;
+  font-size: 3em;
+  color: #FFFFFF;
 
-/* -------------- mine ------------ */
-#loader {
-  border: 1.6rem solid pink;
+  text-shadow: 0 0 10px rgb(70, 71, 11);
+}
+
+.container {
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+.whiteContainer {
+  margin-bottom: auto;
+  background-color: white;
+  color: rgb(51, 51, 51);
+  margin-left: auto;
+  margin-right: auto;
+  width: 5em;
+  height: 5em;
+  padding: 0;
+  border-radius: 5px;
+  vertical-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
   border-radius: 50%;
-  border-top: 1.6rem solid purple;
-  width: 12rem;
-  height: 12rem;
-  animation: spin 2s linear infinite;
+}
+
+.speech-bubble {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75vw;
+  max-width: 500px;
+  min-height: 6em;
+  color: white;
+	position: relative;
+	background: #bb7ca7;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 0.688em solid transparent;
+	border-bottom-color: #bb7ca7;
+	border-top: 0;
+	margin-left: -0.687em;
+	margin-top: -0.687em;
+}
+.speech-bubble p {
+  padding-top: 2em;
+}
+
+/* -------------- button ------------ */
+.btn{
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: purple;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+/* -------------- Loader ------------ */
+#loader {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1rem solid rgb(238, 227, 178);
+  border-radius: 50%;
+  border-top: 1.6rem solid rgb(238, 227, 178);
+  width: 2rem;
+  height: 2rem;
+  animation: spin 1.2s linear infinite;
+
+}
+.loaderDiv {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75vw;
+  min-width: 130px;
+  height: 5em;
+  padding: 0;
+  border-radius: 5px;
+  vertical-align: center;
+ justify-content: center;
 }
 
 @keyframes spin {
@@ -38,17 +131,3 @@ body {
 
 
 
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}
-.dot:hover {
-  height: 50px;
-  width: 50px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}

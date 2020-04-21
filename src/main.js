@@ -17,7 +17,7 @@ function buttonClick() {
   div.setAttribute("id", "loader");
   loaderDiv.append(div);
 
-  const answers = ['yes','no','sometimes', 'you were that time'];
+  const answers = ['Yes','No','Sometimes', 'You were that time'];
 
   let item = answers[Math.floor(Math.random() * answers.length)];
   
@@ -32,9 +32,6 @@ function buttonClick() {
 
 document.getElementById('dumb-button').addEventListener("click", buttonClick)
 
-function dotHover(element) {
-  element.setAttribute("class", "dotHover");
-}
 
 function setAdvice(answer){
   adviceDiv.innerHTML = `<p>${answer}</p>`;
@@ -48,3 +45,5 @@ function fetchFortune(){
 }
 
 fetchFortune();
+
+
