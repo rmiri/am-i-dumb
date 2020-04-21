@@ -1,5 +1,6 @@
 'use strict';
 const answerDiv = document.getElementById('answer-div');
+const adviceDiv = document.getElementById('advice');
 
 function answer(answer) {
   
@@ -34,3 +35,16 @@ document.getElementById('dumb-button').addEventListener("click", buttonClick)
 function dotHover(element) {
   element.setAttribute("class", "dotHover");
 }
+
+function setAdvice(answer){
+  adviceDiv.innerHTML = `<p>${answer}</p>`;
+}
+
+function fetchFortune(){
+  fetch('https://api.adviceslip.com/advice')
+  .then(resp=> resp.json())
+  .then(resp => resp.slip.advice)
+  .then(resp => setAdvice(resp))
+}
+
+fetchFortune();
